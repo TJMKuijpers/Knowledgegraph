@@ -1,0 +1,1 @@
+# Labeled Property Graph (LPG)
