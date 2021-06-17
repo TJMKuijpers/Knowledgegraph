@@ -9,9 +9,9 @@ import os
 import pandas as pd
 import csv
 
-class buildLabeledPropertiesGraph(fileLocationData=None):
+class buildLabeledPropertiesGraph:
     
-    def __init__(self):
+    def __init__(self,fileLocationData):
         self.fileLocation=fileLocationData
         self.data=None
         self.LPG=None
@@ -21,19 +21,27 @@ class buildLabeledPropertiesGraph(fileLocationData=None):
         statusFileExists=os.path.isfile(self.fileLocation)
         return statusFileExists
     
-    def loadFile(self:
-        statusFile=checkFileExistence()
-        if statusFile=True:
-            # File exist and we can read it
-            if self.fileLocation.endswith('.txt'):
-                self.data=pd.read(self.fileLocation,sep="\t")
-            if self.fileLcation.endswith('.csv'):
-                # Check automatically if sep is ";" or ","
-                self.data=pd.read(self.fileLocation,sep=",")
-            else:
+    def loadFile(self):
+        statusFile=self.checkFileExistence()
+        if statusFile:
+           if self.fileLocation.endswith('.txt'):
+              self.data=pd.read(self.fileLocation,sep="\t")
+           if self.fileLcation.endswith('.csv'):
+              self.data=pd.read(self.fileLocation,sep=",")
+           else:
                 print('Only text and csv files are supported')
         else:
             print('File does not exist')
             
     
-    def createLPGInteractions():
+    def createLPGInteractions(self):
+        # Relationship is in format (object - relation - object)
+        return None
+    def createObjectNodes(self):
+        return None
+        
+    def addPropertiesToNodes():
+        return None
+    
+    
+    
