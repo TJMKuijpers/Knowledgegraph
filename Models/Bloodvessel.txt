@@ -1,0 +1,24 @@
+Parent	interaction	child
+Blood vessel graft	hasProperty	Material properties
+Blood vessel graft	hasProperty	Mechanical properties
+Material properties	hasProperty	Mass loss
+Material properties	hasProperty	Tube inner diameter
+Material properties	hasProperty	Wall thickness
+Material properties	hasProperty	Fibers
+Material properties	hasProperty	Porosity
+Fibers	hasProperty	Fiber diameter
+Fibers	hasProperty	Fiber morphology
+Material properties	hasProperty	Shielding
+Material properties	hasProperty	Seeding
+Seeding	isType	Fibrin gel
+Seeding	isType	PBMCs
+Seeding	hasProperty	Seeding addition
+Seeding addition	isType	MCP-1
+Seeding addition	isType	None
+Shielding	isType	GoreTex
+Shielding	isType	ePTFE
+Mechanical properties	hasProperty	Degradation
+Mechanical properties	hasProperty	Sample thickness
+Mechanical properties	hasProperty	Sampl width
+Mechanical properties	hasProperty	Elasticity modulus
+Mechanical properties	hasProperty	Tensile strength

@@ -1,0 +1,20 @@
+TopoChip	hasProperty	Coating
+TopoChip	hasProperty	TopographicalFeature
+TopoChip	hasProperty	Material
+TopoChip	hasProperty	ChipCarrier
+TopoChip	hasProperty	Treatment
+TopoChip	hasProperty	Dimension
+TopographicalFeature	isDefined	TopoUnit
+TopoUnit	consistOf	Primitives
+Primitives	hasSubTypes	Circle
+Primitives	hasSubTypes	Triangle
+Primitives	hasSubTypes	rectangles
+Material	hasClass	PolyStyrene
+Material	hasClass	Poly-Lactic-Acid
+Coating	hasClass	Titanium
+Triangle	isType	isosceles
+Treatment	isType	OxygenPlasma
+Treatment	isType	Silanization
+Dimension	hasClass	Height
+Dimension	hasClass	Width
+
