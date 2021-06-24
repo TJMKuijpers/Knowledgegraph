@@ -32,6 +32,7 @@ MaterialProperties	hasProperty	Coating
 MaterialProperties	hasProperty	Shape
 MaterialProperties	hasProperty	Crystallinity
 MaterialProperties	hasProperty	Hydrophobic
+MaterialProperties	hasProperty	CoatingAdditive
 Shape	hasPropertyShape	Block
 Shape	hasPropertyShape	Disc
 Shape	hasPropertyShape	Flat
