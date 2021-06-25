@@ -1,6 +1,7 @@
 Parent	interaction	child
 Blood vessel graft	hasProperty	Material properties
 Blood vessel graft	hasProperty	Mechanical properties
+Blood vessel graft	hasProperty	Biological properties
 Material properties	hasProperty	Mass loss
 Material properties	hasProperty	Tube inner diameter
 Material properties	hasProperty	Wall thickness
@@ -12,13 +13,34 @@ Material properties	hasProperty	Shielding
 Material properties	hasProperty	Seeding
 Seeding	isType	Fibrin gel
 Seeding	isType	PBMCs
+Seeding	isType	None
 Seeding	hasProperty	Seeding addition
 Seeding addition	isType	MCP-1
 Seeding addition	isType	None
 Shielding	isType	GoreTex
 Shielding	isType	ePTFE
+Porosity	hasProperty	Pore size
 Mechanical properties	hasProperty	Degradation
 Mechanical properties	hasProperty	Sample thickness
 Mechanical properties	hasProperty	Sampl width
 Mechanical properties	hasProperty	Elasticity modulus
 Mechanical properties	hasProperty	Tensile strength
+Material properties	hasProperty	Melting Temperature
+Material properties	hasProperty	glass transition
+Material properties	hasProperty	Water Exposure Leakage
+Biological properties	hasProperty	Cytotoxicity
+Biological properties	hasProperty	Collagen content
+Biological properties	hasProperty	Infiltration immune cells
+Infiltration immune cells	isType	Macrophages
+Macrophages	isSubType	M1
+Macrophages	isSubType	M2
+Infiltration immune cells	isType	CD34+ cells
+Biological properties	hasProperty	Gross morphology
+Biological properties	hasProperty	Tissue composition
+Biological properties	hasProperty	Calcium deposits
+Biological properties	hasProperty	Aneurysm formation
+Wall thickness	hasProperty	before implantation
+Wall thickness	hasProperty	After explantation
+Biological properties	hasProperty	Cell infiltration depth
+Biological properties	hasProperty	α-smooth muscle actin
+Biological properties	hasProperty	Von Wille-brand factor

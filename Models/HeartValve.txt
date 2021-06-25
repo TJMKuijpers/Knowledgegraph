@@ -1,0 +1,52 @@
+Parent	Interaction	Child
+Heart Valve	isClass	Tissue Engineered
+Heart Valve	isClass	Donor
+Tissue Engineered	hasProperty	Material characterization
+Tissue Engineered	hasProperty	Mechanical characterization
+Tissue Engineered	hasProperty	Biological characterization
+Mechanical characterization	hasProperty	Cardiac output
+Mechanical characterization	hasProperty	Closing volume
+Mechanical characterization	hasProperty	Leaking volume
+Material characterization	hasProperty	Support
+Material characterization	hasProperty	Scaffold
+Material characterization	hasProperty	Cytotoxicity
+Support	hasProperty	Material
+Support	hasProperty	Type
+Support	hasProperty	Shape
+Support	hasProperty	Outer diameter
+Support	hasProperty	Inner diameter
+Support	hasProperty	Coating
+Scaffold	hasProperty	Thickness
+Scaffold	hasProperty	Polymer
+Scaffold	hasProperty	Fiber Aligment
+Scaffold	hasProperty	Fiber morphology
+Scaffold	hasProperty	Fiber diameter
+Scaffold	hasProperty	Aligned fiber fraction
+Scaffold	hasProperty	Polymer
+Scaffold	hasProperty	Melting transition temperature
+Scaffold	hasProperty	Glass transition temperature
+Scaffold	hasProperty	Degradation
+Donor	hasProperty	Valve type
+Donor	hasProperty	Annulus diameter
+Donor	hasProperty	Radial leaflet size
+Donor	hasProperty	Circumferential leaflet size
+Donor	hasProperty	Fibrosis
+Donor	hasProperty	Artheroma
+Donor	hasProperty	DNA content
+Donor	hasProperty	sGAG content
+Donor	hasProperty	HYP content
+Donor	hasProperty	HYP/sGAG ratio
+Donor	hasProperty	Elastin
+Donor	hasProperty	hydroxylysyl pyridinoline collagen cross-link density
+Donor	hasProperty	lysyl-pyridinoline cross-link density
+Mechanical characterization	hasProperty	Stress
+Mechanical characterization	hasProperty	Strain
+Strain	hasProperty	Radial direction
+Strain	hasProperty	Circumferential direction
+Mechanical characterization	hasProperty	Stress
+Stress	hasProperty	Radial direction
+Stress	hasProperty	Circumferential direction
+Biological characterization	hasProperty	DNA content
+Biological characterization	hasProperty	Collagen content
+Biological characterization	hasProperty	Elastin content
+Biological characterization	hasProperty	Glycosaminoglycans content
