@@ -56,6 +56,7 @@ class connectGraphToNeo4j:
         self.password = password
         self.username = username
         self.graph = None
+        self.create_interactions_batch = []
 
     def connect_to_database(self):
         self.graph = GraphDatabase.driver(self.localhost, auth=(self.username, self.password))
@@ -72,9 +73,22 @@ class connectGraphToNeo4j:
             session.run(i)
         print('nodes added')
 
-    def add_interactions_to_graph(self, relationstoadd):
-        return None
-        # interactions are based on the interactions in the data file
+    def add_interactions_to_graph(self, relationstoadd,node_type_id):
+        # Interactions are based on the model
+        create_interactions_batch=[]
+        for x in range(0,relationstoadd.shape[0]):
+            create_interactions="MATCH (a:"+node_type_id+"),(b:"+node_type_id+")"+" WHERE a.Name="+"'"+relationstoadd.Parent[x]+"'"+" AND b.Name="+ "'"+relationstoadd.Child[x]+"'"+ \
+                                " CREATE (a)-[r:"+relationstoadd.Type[x]+"]->(b) "+ \
+                                "RETURN r"
+            create_interactions_batch.append(create_interactions)
+        print(create_interactions_batch)
+        # restart the session?
+        self.create_interactions_batch=create_interactions_batch
+        session=self.graph.session()
+        for x in create_interactions_batch:
+           session.run(x)
+        print("Interactions added")
+
 
     def add_properties_to_nodes(self, propertiestoadd):
         return None
