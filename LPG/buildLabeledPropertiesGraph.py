@@ -8,47 +8,48 @@ Created on Thu Jun 17 17:19:22 2021
 import os
 import pandas as pd
 from neo4j import GraphDatabase
-
-
 class LabeledPropertyGraph:
-
-    def __init__(self, fileLocationData, fileLocationModel):
-        self.fileLocation = fileLocationData
-        self.modelLocation = fileLocationModel
-        self.data = None
-        self.nodes = None
-        self.LPG = None
-        self.dataType = 'LPG'
-
+    
+    def __init__(self,fileLocationData,fileLocationModel):
+        self.fileLocation=fileLocationData
+        self.modelLocation=fileLocationModel
+        self.data=None
+        self.nodes=None
+        self.LPG=None
+        self.dataType='LPG'
+        
     def checkFileExistence(self):
-        statusFileExists = os.path.isfile(self.modelLocation)
+        statusFileExists=os.path.isfile(self.modelLocation)
         return statusFileExists
-
+    
     def loadFile(self):
-        statusFile = self.checkFileExistence()
+        statusFile=self.checkFileExistence()
+        print(statusFile)
         if statusFile:
-            if self.fileLocation.endswith('.txt'):
-                self.data = pd.read_csv(self.fileLocation, sep="\t")
-            elif self.fileLocation.endswith('.csv'):
-                self.data = pd.read_csv(self.fileLocation, sep=",")
-            else:
+           if self.fileLocation.endswith('.txt'):
+              self.data=pd.read_csv(self.fileLocation,sep="\t")
+           elif self.fileLocation.endswith('.csv'):
+              self.data=pd.read_csv(self.fileLocation,sep=",")
+           else:
                 print('Only text and csv files are supported')
         else:
             print('File does not exist')
-
+            
+    
     def createInteractions(self):
-        # Relationship is in format (object - relation - object)
+        # Relationship is in format Parent - Type - Child
+        data_interactions_renamed=pd.DataFrame({'Parent':self.data.iloc[:,0],'Type':self.data.iloc[:,1],'Child':self.data.iloc[:,2]})
+        self.data_interactions=data_interactions_renamed
         return None
-
+    
     def createObjectNodes(self):
-        allNodes = [self.data.Parent, self.data.Child]
-        allNodes_flat = set([item for x in allNodes for item in x])
-        self.nodes = allNodes_flat
+        allNodes=[self.data.iloc[:,0],self.data.iloc[:,2]]
+        allNodes_flat=set([item for x in allNodes for item in x])
+        self.nodes=allNodes_flat
 
     def addPropertiesToNodes():
         return None
-
-
+    
 class connectGraphToNeo4j:
 
     def __init__(self, local_db_name, username, password):
@@ -88,7 +89,3 @@ class connectGraphToNeo4j:
         for x in create_interactions_batch:
            session.run(x)
         print("Interactions added")
-
-
-    def add_properties_to_nodes(self, propertiestoadd):
-        return None
